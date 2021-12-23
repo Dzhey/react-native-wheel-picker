@@ -3,11 +3,10 @@ buildscript {
         repositories {
             google()
             mavenCentral()
-            jcenter()
         }
 
         dependencies {
-            classpath 'com.android.tools.build:gradle:3.5.3'
+            classpath 'com.android.tools.build:gradle:3.5.4'
         }
     }
 }
@@ -19,12 +18,10 @@ def safeExtGet(prop, fallback) {
 }
 
 android {
-    compileSdkVersion safeExtGet('WheelPicker_compileSdkVersion', 29)
+    compileSdkVersion safeExtGet('WheelPicker_compileSdkVersion', 31)
     defaultConfig {
-        minSdkVersion safeExtGet('WheelPicker_minSdkVersion', 16)
-        targetSdkVersion safeExtGet('WheelPicker_targetSdkVersion', 29)
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion safeExtGet('WheelPicker_minSdkVersion', 21)
+        targetSdkVersion safeExtGet('WheelPicker_targetSdkVersion', 31)
 
     }
 
@@ -40,6 +37,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    dependencies {
+        implementation 'com.github.Dzhey:WheelPicker:master-SNAPSHOT'
+    }
 }
 
 repositories {
@@ -48,9 +49,9 @@ repositories {
         // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
         url("$rootDir/../node_modules/react-native/android")
     }
+    maven { url 'https://jitpack.io' }
     google()
     mavenCentral()
-    jcenter()
 }
 
 dependencies {
