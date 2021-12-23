@@ -1,19 +1,18 @@
 {
   "name": "@dzhey/react-native-wheel-picker",
-  "version": "0.1.0",
+  "version": "0.1.8",
   "description": "React Native picker library based on Android WheelPicker and native iOS picker",
-  "main": "lib/commonjs/index",
-  "module": "lib/module/index",
-  "types": "lib/typescript/index.d.ts",
-  "react-native": "src/index",
+  "main": "lib/module/index.js",
+  "types": "src/index.d.ts",
+  "react-native": "lib/module/index.js",
   "source": "src/index",
   "files": [
     "src",
     "lib",
     "android",
-    "ios",
-    "cpp",
-    "react-native-wheel-picker.podspec",
+    "!ios",
+    "!cpp",
+    "!react-native-wheel-picker.podspec",
     "!lib/typescript/example",
     "!android/build",
     "!ios/build",
@@ -86,6 +85,7 @@
   },
   "release-it": {
     "git": {
+      "commit": false,
       "commitMessage": "chore: release ${version}",
       "tagName": "v${version}"
     },
@@ -93,7 +93,7 @@
       "publish": true
     },
     "github": {
-      "release": true
+      "release": false
     },
     "plugins": {
       "@release-it/conventional-changelog": {
@@ -135,14 +135,7 @@
     "source": "src",
     "output": "lib",
     "targets": [
-      "commonjs",
-      "module",
-      [
-        "typescript",
-        {
-          "project": "tsconfig.build.json"
-        }
-      ]
+      "module"
     ]
   },
   "dependencies": {

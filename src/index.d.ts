@@ -58,7 +58,7 @@ export interface PickerProps<ItemValue> extends ViewProps {
   textSize?: number;
 }
 
-export default class Picker<ItemValue> extends React.Component<
+export default class WheelPickerView<ItemValue> extends React.Component<
   PickerProps<ItemValue>,
   {}
 > {
